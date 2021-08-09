@@ -16,7 +16,7 @@
 
 namespace nacos{
 
-LOG_LEVEL Logger::_CUR_SYS_LOG_LEVEL = ERROR;
+LOG_LEVEL Logger::_CUR_SYS_LOG_LEVEL = LOG_LEVEL_ERROR;
 NacosString Logger::_log_base_dir = "";
 NacosString Logger::_log_file = "";
 int64_t Logger::_rotate_time;
@@ -106,7 +106,7 @@ int Logger::debug_debug(const char *format, ...) {
     va_list argList;
 
     va_start(argList, format);
-    int retval = debug_helper(DEBUG, format, argList);
+    int retval = debug_helper(LOG_LEVEL_DEBUG, format, argList);
     va_end(argList);
     return retval;
 }
@@ -115,7 +115,7 @@ int Logger::debug_info(const char *format, ...) {
     va_list argList;
 
     va_start(argList, format);
-    int retval = debug_helper(INFO, format, argList);
+    int retval = debug_helper(LOG_LEVEL_INFO, format, argList);
     va_end(argList);
     return retval;
 }
@@ -124,7 +124,7 @@ int Logger::debug_warn(const char *format, ...) {
     va_list argList;
 
     va_start(argList, format);
-    int retval = debug_helper(WARN, format, argList);
+    int retval = debug_helper(LOG_LEVEL_WARN, format, argList);
     va_end(argList);
     return retval;
 }
@@ -133,7 +133,7 @@ int Logger::debug_error(const char *format, ...) {
     va_list argList;
 
     va_start(argList, format);
-    int retval = debug_helper(ERROR, format, argList);
+    int retval = debug_helper(LOG_LEVEL_ERROR, format, argList);
     va_end(argList);
     return retval;
 }
@@ -172,15 +172,15 @@ void Logger::applyLogSettings(Properties &props) {
         NacosString &logLevelStr = props[PropertyKeyConst::LOG_LEVEL];
 
         if (logLevelStr == "DEBUG") {
-            Logger::setLogLevel(DEBUG);
+            Logger::setLogLevel(LOG_LEVEL_DEBUG);
         } else if (logLevelStr == "INFO") {
-            Logger::setLogLevel(INFO);
+            Logger::setLogLevel(LOG_LEVEL_INFO);
         } else if (logLevelStr == "WARN") {
-            Logger::setLogLevel(WARN);
+            Logger::setLogLevel(LOG_LEVEL_WARN);
         } else if (logLevelStr == "ERROR") {
-            Logger::setLogLevel(ERROR);
+            Logger::setLogLevel(LOG_LEVEL_ERROR);
         } else if (logLevelStr == "NONE") {
-            Logger::setLogLevel(NONE);
+            Logger::setLogLevel(LOG_LEVEL_NONE);
         } else {
             throw NacosException(NacosException::INVALID_CONFIG_PARAM, "Invalid option " + logLevelStr + " for " + PropertyKeyConst::LOG_LEVEL);
         }

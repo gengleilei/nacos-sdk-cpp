@@ -1,10 +1,12 @@
 #include "NetUtils.h"
+
 #include <arpa/inet.h>
-#include <sys/socket.h>
-#include <netdb.h>
 #include <ifaddrs.h>
-#include <src/log/Logger.h>
+#include <netdb.h>
 #include <string.h>
+#include <sys/socket.h>
+
+#include "src/log/Logger.h"
 
 namespace nacos{
 

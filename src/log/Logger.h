@@ -28,11 +28,11 @@
 namespace nacos{
 
 enum LOG_LEVEL {
-    DEBUG = 0,
-    INFO,
-    WARN,
-    ERROR,
-    NONE
+    LOG_LEVEL_DEBUG = 0,
+    LOG_LEVEL_INFO,
+    LOG_LEVEL_WARN,
+    LOG_LEVEL_ERROR,
+    LOG_LEVEL_NONE
 };
 
 /**

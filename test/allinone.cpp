@@ -209,7 +209,7 @@ int main() {
     cout << "And when the server is ready, press any key to start the test." << endl;
     getchar();
     int nr_succ = 0, nr_fail = 0;
-    Logger::setLogLevel(DEBUG);
+    Logger::setLogLevel(LOG_LEVEL_DEBUG);
     cout << "BEGIN OF TESTS" << endl;
     cout << "===========================" << endl;
     for (size_t i = 0; i < sizeof(testList) / sizeof(TestData); i++) {

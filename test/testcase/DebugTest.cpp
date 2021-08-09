@@ -4,7 +4,7 @@ using namespace std;
 using namespace nacos;
 
 bool testDebug() {
-    log_print(DEBUG, "print\n");
+    log_print(LOG_LEVEL_DEBUG, "print\n");
     log_debug("debug\n");
     log_info("info\n");
     log_warn("warn\n");
@@ -22,15 +22,15 @@ bool testVaArgs() {
 }
 
 bool testlogPrint() {
-    log_print(DEBUG, "===>print %s %s %d\n", "print", "print", 9);
-    log_print(DEBUG, "===>print %s %s %d\n", "print", "print", 9);
-    log_print(DEBUG, "===>print %s %s %d\n", "print", "print", 9);
+    log_print(LOG_LEVEL_DEBUG, "===>print %s %s %d\n", "print", "print", 9);
+    log_print(LOG_LEVEL_DEBUG, "===>print %s %s %d\n", "print", "print", 9);
+    log_print(LOG_LEVEL_DEBUG, "===>print %s %s %d\n", "print", "print", 9);
     return true;
 }
 
 bool testVaArgs2() {
     log_info("info %s %s\n", "info", "info");
-    log_print(DEBUG, "print %s %s %d\n", "print", "print", 9);
+    log_print(LOG_LEVEL_DEBUG, "print %s %s %d\n", "print", "print", 9);
     log_debug("debug %s %s\n", "debug", "debug");
     log_info("info %s %s\n", "info", "info");
     log_warn("warn %s %s\n", "warn", "warn");
