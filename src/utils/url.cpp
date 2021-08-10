@@ -1,5 +1,5 @@
 #include "utils/url.h"
-#include <curl/curl.h>
+#include "curl/curl.h"
 
 namespace nacos{
 NacosString urlencode(const NacosString &content) {

@@ -3,7 +3,7 @@
 
 
 #include <pthread.h>
-#include <curl/curl.h>
+#include "curl/curl.h"
 #include "NacosString.h"
 #include "NacosExceptions.h"
 #include "IHttpCli.h"

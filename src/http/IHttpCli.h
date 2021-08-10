@@ -3,7 +3,7 @@
 
 #include <list>
 #include <map>
-#include <curl/curl.h>
+#include "curl/curl.h"
 #include "NacosExceptions.h"
 #include "NacosString.h"
 #include "Compatibility.h"
